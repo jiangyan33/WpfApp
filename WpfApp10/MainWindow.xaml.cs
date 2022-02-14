@@ -29,5 +29,20 @@ namespace WpfApp10
         {
             new Window1().ShowDialog();
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            new Window2().ShowDialog();
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            new Window3().ShowDialog();
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            new Window4().ShowDialog();
+        }
     }
 }

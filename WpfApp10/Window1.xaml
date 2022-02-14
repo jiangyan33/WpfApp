@@ -59,23 +59,26 @@
                 </Button.OpacityMask>
             </Button>
             <StackPanel>
-                <Grid Margin="10" Grid.IsSharedSizeScope="True" VerticalAlignment="Center">
+                <Grid Margin="10" Grid.IsSharedSizeScope="True" HorizontalAlignment="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" SharedSizeGroup="Row"/>
                         <RowDefinition Height="Auto" SharedSizeGroup="Row"/>
                     </Grid.RowDefinitions>
                 </Grid>
-                <TextBlock Name="text" FontSize="30" Text="Here is some reflected text" />
-                <Rectangle Grid.Row="1" RenderTransformOrigin="1,0.5">
+                <TextBox Name="text" FontSize="30" Text="Here is some reflected text" />
+                <Rectangle Grid.Row="1"  Height="50" RenderTransformOrigin="1,0.5">
                     <Rectangle.Fill>
                         <VisualBrush Visual="{Binding ElementName=text}"></VisualBrush>
                     </Rectangle.Fill>
                     <Rectangle.OpacityMask>
-                        <LinearGradientBrush>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                             <GradientStop Offset="0.3" Color="Transparent"/>
-                            <GradientStop Offset="1" Color="#44000000"></GradientStop>
-                        </LinearGradientBrush>
+                            <GradientStop Offset="1" Color="#44000000" />
+                        </LinearGradientBrush> 
                     </Rectangle.OpacityMask>
+                    <Rectangle.RenderTransform>
+                        <ScaleTransform ScaleY="-1"></ScaleTransform>
+                    </Rectangle.RenderTransform>
                 </Rectangle>
             </StackPanel>
         </StackPanel>

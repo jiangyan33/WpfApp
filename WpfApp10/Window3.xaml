@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp10.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10"
+        mc:Ignorable="d"
+        Title="Window3" Height="90" Width="140" WindowStyle="None">
+    <Window.Resources>
+        <GeometryGroup x:Key="box" FillRule="Nonzero">
+            <RectangleGeometry Rect="0,20,120,60" RadiusX="30" RadiusY="50"></RectangleGeometry>
+            <EllipseGeometry Center="100,50" RadiusX="40" RadiusY="40" />
+        </GeometryGroup>
+    </Window.Resources>
+    <StackPanel Background="Purple" Margin="0,0,0,0">
+        <Grid  Background="Green" Clip="{StaticResource box}"  Height="90">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="100"  Margin="15,0,0,0"></TextBlock>
+            <TextBlock Grid.Row="1" Text="100"  Margin="15,10,0,0"></TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Text="100"  Margin="-232,40,0,0"></TextBlock>
+        </Grid>
+    </StackPanel>
+</Window>
