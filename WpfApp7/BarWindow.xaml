@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp7.BarWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp7"
+        mc:Ignorable="d"
+        Title="BarWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Slider Orientation="Horizontal" Margin="5,5,5,0" Height="Auto"  VerticalAlignment="Top"  Foreground="Red" 
+                IsSelectionRangeEnabled="True" SelectionStart="70" SelectionEnd="100" SmallChange="1" LargeChange="5"
+                Maximum="100" Minimum="0" Value="10" TickPlacement="BottomRight" TickFrequency="5"/>
+
+        <ProgressBar Name="progressBar" Grid.Row="1" 
+                     Margin="5,5,5,0" Height="10" VerticalAlignment="Top" Maximum="100" Minimum="0" Value="0" IsIndeterminate="True"/>
+        <Button Grid.Row="1" Click="Button_Click" VerticalAlignment="Center">Button</Button>
+    </Grid>
+</Window>

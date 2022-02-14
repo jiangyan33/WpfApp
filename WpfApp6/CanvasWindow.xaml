@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfApp6.CanvasWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="CanvasWindow" Height="450" Width="800">
+    <!--Canvas 类似绝对定位，指定Top、left、right、bottom
+        ZIndex控制显示层级
+    -->
+    <Canvas>
+        <Button Name="buttom2" Canvas.Top="90" Canvas.Left="136" Click="Button_Click">Button2</Button>
+        <Button Name="buttom1" Canvas.Top="120" Canvas.Left="136">Button1</Button>
+        <DataGrid Name="grid" Canvas.Top="120" Canvas.Left="136" Width="200" Height="200"></DataGrid>
+    </Canvas>
+</Window>

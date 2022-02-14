@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp6.KeysWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="KeysWindow" Height="450" Width="800">
+    <!--事件类型（输入事件） 生命周期事件、鼠标事件、键盘事件、手写笔事件、多点触控事件-->
+    <!--PreviewKeyDown、KeyDown、PreviewTextInput、TextInput、PreviewKeyUp、KeyUp、-->
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DockPanel Margin="5" Grid.Row="0" LastChildFill="True">
+            <TextBlock DockPanel.Dock="Left">Type here</TextBlock>
+            <TextBox Focusable="True" PreviewKeyDown="KeyEvent" KeyDown="KeyEvent" PreviewKeyUp="KeyEvent" KeyUp="KeyEvent"></TextBox>
+        </DockPanel>
+        <ListBox Margin="5" Name="lstMessage" Grid.Row="1"></ListBox>
+        <Button Margin="5" Name="button" Content="Clear List" Grid.Row="2" HorizontalAlignment="Right" Padding="3" Click="button_Click"></Button>
+    </Grid>
+</Window> 

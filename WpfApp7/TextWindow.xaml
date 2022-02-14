@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApp7.TextWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp7"
+        mc:Ignorable="d"
+        Title="TextWindow" Height="450" Width="800">
+    <!--SpellCheck.IsEnabled="True" 拼写检查，支持英文，中文不好使-->
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBox SpellCheck.IsEnabled="True" Margin="3" Name="textBox" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Text="this is a text box" SelectionChanged="TextBox_SelectionChanged" />
+        <ScrollViewer Foreground="Blue" Grid.Row="1" Margin="0,10,0,5" VerticalScrollBarVisibility="Visible">
+            <StackPanel>
+                <TextBlock>Current section:</TextBlock>s
+                <TextBlock x:Name="textSection" TextWrapping="Wrap" />
+            </StackPanel>
+        </ScrollViewer>
+        <PasswordBox Name="passwordBox" Grid.Row="2" PasswordChar="8" Margin="3" Width="100" Height="23"/>
+    </Grid>
+</Window>

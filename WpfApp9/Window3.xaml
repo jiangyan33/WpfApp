@@ -1,0 +1,24 @@
+﻿<Window x:Class="WpfApp9.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp9"
+        mc:Ignorable="d"
+        Title="Window3" Height="450" Width="800">
+    <!--资源可以定义到元素内部-->
+    <Window.Resources>
+        <ImageBrush x:Key="tiledBrush" TileMode="Tile" 
+                    ViewportUnits="Absolute" 
+                    ImageSource="Resources/018.png" 
+                    Viewport="0 0 32 32" />
+    </Window.Resources>
+    <StackPanel Margin="3">
+        <!--静态资源{StaticResource 资源Key名称} 会根据资源树向上查找，就近选择
+            静态资源只会获取一次，在程序运行过程中如果该值发生了变化，引用的静态资源不会发生变更，想对应的是动态资源（DynamicResource）
+        -->
+        <Button Name="button1" Content="Use a static resource A Tiled Button" Background="{StaticResource tiledBrush}" Margin="3" FontSize="14" Padding="5"></Button>
+        <Button Name="button2" Foreground="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}" Click="button2_Click" Content="Change The brush Button" Margin="3" FontSize="14" Padding="5"></Button>
+        <Button Name="button3" Content="Dynamic resource Button" Background="{DynamicResource tiledBrush}" Margin="3" FontSize="14" Padding="5"></Button>
+    </StackPanel>
+</Window>

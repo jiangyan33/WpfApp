@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApp6.InkCanvasWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="InkCanvasWindow1" Height="450" Width="800" Loaded="Window_Loaded">
+
+    <Grid Margin="3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="6">
+            <ComboBox Name="combox" SelectionChanged="combox_SelectionChanged" />
+        </StackPanel>
+        
+        <InkCanvas Name="inkCanvas" Grid.Row="1" EditingMode="None" Background="Green">
+            <Button InkCanvas.Top="50" InkCanvas.Left="20" Content="Button"/>
+        </InkCanvas>
+    </Grid>
+    
+  
+</Window>

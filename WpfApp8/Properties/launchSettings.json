@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WpfApp8": {
+      "commandName": "Project",
+      "commandLineArgs": "textFile1.txt"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+﻿<Window x:Class="WpfApp7.ContentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp7"
+        mc:Ignorable="d"
+        Title="ContentWindow" Height="450" Width="800">
+    <!--内容对齐HorizontalContentAlignment
+    label的Content中_表示Alt快捷键按了之后会target目标会获取到光标
+    当按回车时,如果没有按钮被选中,则触发IsDefault为True的按钮.
+    -->
+    <StackPanel>
+        <Button Height="30" Margin="3" HorizontalContentAlignment="Left" Content="退出(ESC)" IsCancel="True" Name="exit" Click="exit_Click">
+        </Button>
+        <Button Height="40" Margin="3" IsDefault="True" Name="button2" Click="button2_Click">
+            <Image Source="./Resources/018.png" />
+            <Button.ToolTip>
+                <ToolTip Background="Green" Placement="Mouse" HorizontalOffset="5" VerticalOffset="5">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Foreground="Blue">这是一个文本</TextBlock>
+                        <TextBlock Foreground="Red" Margin="10,0,0,0">这是一个文本</TextBlock>
+                    </StackPanel>
+                </ToolTip>
+            </Button.ToolTip>
+        </Button>
+        <Button Margin="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">这个是
+                <Run TextDecorations="Underline" MouseEnter="Run_MouseEnter">term</Run>弹出文本
+                </TextBlock>
+                <Image Source="./Resources/018.png" />
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">这个是文本</TextBlock>
+            </StackPanel>
+        </Button>
+        <Popup Name="popLink" StaysOpen="False" Placement="Mouse" MaxWidth="200" PopupAnimation="Slide" AllowsTransparency="True">
+            <Border BorderBrush="Beige" BorderThickness="2" Background="White">
+                <TextBlock Margin="10" TextWrapping="Wrap">For more information.see<Hyperlink NavigateUri="http://www.baidu.com" Click="Hyperlink_Click">Wikipedia</Hyperlink></TextBlock>
+            </Border>
+        </Popup>
+        <Label Content="Choose _A" Target="{Binding ElementName=textBox1}"></Label>
+        <TextBox Name="textBox1" Height="24"></TextBox>
+
+        <CheckBox Name="checkBox1" IsChecked="True" Height="20" Content="设置1" VerticalContentAlignment="Center"/>
+        <CheckBox Name="checkBox2" IsChecked="{x:Null}" Height="20" Content="设置2" VerticalContentAlignment="Center"/>
+        <RadioButton IsChecked="True" Content="1"/>
+        <RadioButton Content="2"/>
+        <RadioButton Content="3"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfApp6.BubbledLabelClick"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp6"
+        mc:Ignorable="d"
+        Title="BubbledLabelClick" Height="450" Width="800" MouseUp="Grid_MouseUp">
+    <!-- 直接路由事件，不能传递给其它事件（MouseEnter）
+    
+    冒泡路由事件（MouseUp由最深层往外层冒泡），隧道路由事件（PreviewKeyDown和冒泡相反）先与冒泡路由事件触发-->
+    <Grid Margin="3" MouseUp="Grid_MouseUp">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Margin="5" Background="AliceBlue" BorderBrush="Black" BorderThickness="1" MouseUp="Grid_MouseUp" HorizontalAlignment="Left">
+            <StackPanel MouseUp="Grid_MouseUp">
+                <TextBlock Margin="3" MouseUp="Grid_MouseUp">
+                    Image and picture label
+                </TextBlock>
+                <Image Source="Resources/018.png" MouseUp="Grid_MouseUp" Stretch="None" />
+                <TextBlock Margin="3" MouseUp="Grid_MouseUp">
+                    Courtesy of the StackPanel
+                </TextBlock>
+            </StackPanel>
+        </Label>
+        <ListBox Margin="5" Name="lstMessages" Grid.Row="1" />
+        <CheckBox Margin="5" Grid.Row="2" Name="chkHandle">Handle first event</CheckBox>
+        <Button Click="Button_Click" Grid.Row="3" HorizontalAlignment="Right" Margin="5" Padding="3">Clear List</Button>
+    </Grid>
+</Window>
