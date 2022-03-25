@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <RadialGradientBrush RadiusX="1" RadiusY="5" GradientOrigin="0.5,0.3" x:Key="HighlightBackground">
+        <GradientStop Color="White" Offset="0" />
+        <GradientStop Color="Blue" Offset="0.4" />
+    </RadialGradientBrush>
+
+    <RadialGradientBrush RadiusX="1" RadiusY="5" GradientOrigin="0.5,0.3" x:Key="PressedBackground">
+        <GradientStop Color="White" Offset="0" />
+        <GradientStop Color="Blue" Offset="1" />
+    </RadialGradientBrush>
+
+    <SolidColorBrush Color="Blue" x:Key="DefaultBackground" />
+    <SolidColorBrush Color="Gray" x:Key="DisabledBackground" />
+
+    <RadialGradientBrush RadiusX="1" RadiusY="5" GradientOrigin="0.5,0.3" x:Key="Boder">
+        <GradientStop Color="White" Offset="0" />
+        <GradientStop Color="Blue" Offset="1" />
+    </RadialGradientBrush>
+
+    <!--按钮模板-->
+    <ControlTemplate x:Key="GradientButtonTemplate" TargetType="Button">
+        <Border Name="Border" BorderBrush="{StaticResource Boder}" 
+                BorderThickness="2" 
+                CornerRadius="2" 
+                TextBlock.Foreground="White"
+                Background="{StaticResource DefaultBackground}">
+            <Grid>
+                <Rectangle Name="FocusCue" 
+                           Visibility="Hidden" 
+                           Stroke="Black" 
+                           StrokeThickness="1" 
+                           StrokeDashArray="1 2" 
+                           SnapsToDevicePixels="True" />
+                <!--RecognizesAccessKey="True" _支持键盘组合键-->
+                <ContentPresenter Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"></ContentPresenter>
+            </Grid>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource PressedBackground}" />
+            </Trigger>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter TargetName="FocusCue" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DisabledBackground}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource GradientButtonTemplate}" />
+    </Style>
+</ResourceDictionary>

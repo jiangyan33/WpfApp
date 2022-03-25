@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApp12.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp12"
+        mc:Ignorable="d"
+        Title="Window2" Height="450" Width="800">
+    <!--使用资源字典的方式引入控件模板-->
+    <!--运行过程中替换资源字典-->
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/GradientButton.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <StackPanel>
+        <Button Margin="10" Padding="5" Content="A Simple Button with Custom Template" Click="cmdOne_Click" Name="cmdOne" Style="{x:Null}"></Button>
+        <Button Margin="10" Padding="5" Content="A Simple Button with Custom Template" Click="cmdOne_Click" Name="cmdTwo"></Button>
+        <Button Margin="10" Padding="5" Content="A _Thread Button with Custom Template" Click="cmdOne_Click" Name="cmdThree"></Button>
+        <Button Margin="10" Padding="5" Content="A Simple Button with Custom Template" Name="cmdFour" IsEnabled="False"></Button>
+        <CheckBox Margin="10" Name="checkBox" Checked="checkBox_Checked" Unchecked="checkBox_Unchecked" Content="Use Alternate Theme"></CheckBox>
+    </StackPanel>
+</Window>

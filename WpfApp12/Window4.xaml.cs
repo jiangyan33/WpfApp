@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace WpfApp12
+{
+    /// <summary>
+    /// Window4.xaml 的交互逻辑
+    /// </summary>
+    public partial class Window4 : Window
+    {
+        public Window4()
+        {
+            InitializeComponent();
+            // 构建基本的用户控件，自定义用户控件
+        }
+
+        private void colorControl_ColorChanged(object sender, RoutedPropertyChangedEventArgs<Color> e)
+        {
+            textBlock.Text = "The current color is " + e.NewValue.ToString();
+        }
+    }
+}

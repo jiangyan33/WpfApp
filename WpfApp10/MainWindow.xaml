@@ -18,11 +18,11 @@
         <Button Content="变换与透明" Name="button1" Click="button1_Click"/>
         <Button Content="路径和集合图形" Name="button2" Click="button2_Click"/>
         <Button Content="测试集合图形" Name="button3" Click="button3_Click"/>
-        <Button Content="可视化对象" Name="button4" Click="button4_Click"/>
-        <Button Content="Button5" Name="button5"/>
-        <Button Content="Button6" Name="button6"/>
-        <Button Content="Button7" Name="button7"/>
-        <Button Content="Button8" Name="button8"/>
-        <Button Content="Button9" Name="button9"/>
+        <Button Content="可视化对象和命中测试" Name="button4" Click="button4_Click"/>
+        <Button Content="效果" Name="button5" Click="button5_Click"/>
+        <Button Content="WriteableBitmap类" Name="button6" Click="button6_Click"/>
+        <Button Content="基本动画" Name="button7" Click="button7_Click"/>
+        <Button Content="TimeLine类" Name="button8" Click="button8_Click"/>
+        <Button Content="故事板" Name="button9" Click="button9_Click"/>
     </StackPanel>
 </Window>

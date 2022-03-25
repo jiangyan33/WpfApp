@@ -1,12 +1,12 @@
-﻿<Window x:Class="WpfApp10.Window4"
+﻿<Window x:Class="WpfApp12.Window8"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp10"
+        xmlns:local="clr-namespace:WpfApp12"
         mc:Ignorable="d"
-        Title="Window4" Height="450" Width="800" Loaded="Window_Loaded" MouseRightButtonDown="Window_MouseRightButtonDown" MouseLeftButtonDown="Window_MouseLeftButtonDown">
-    <local:MyPanel x:Name="myPanel">
+        Title="Window8" Height="450" Width="800">
+    <Grid>
         
-    </local:MyPanel>
+    </Grid>
 </Window>

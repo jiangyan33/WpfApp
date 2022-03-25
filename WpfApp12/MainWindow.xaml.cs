@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp10
+namespace WpfApp12
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -33,41 +33,49 @@ namespace WpfApp10
         private void button2_Click(object sender, RoutedEventArgs e)
         {
             new Window2().ShowDialog();
+
         }
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             new Window3().ShowDialog();
+
         }
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
             new Window4().ShowDialog();
+
         }
 
         private void button5_Click(object sender, RoutedEventArgs e)
         {
             new Window5().ShowDialog();
+
         }
 
         private void button6_Click(object sender, RoutedEventArgs e)
         {
             new Window6().ShowDialog();
+
         }
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
             new Window7().ShowDialog();
+
         }
 
         private void button8_Click(object sender, RoutedEventArgs e)
         {
             new Window8().ShowDialog();
+
         }
 
         private void button9_Click(object sender, RoutedEventArgs e)
         {
             new Window9().ShowDialog();
+
         }
     }
 }
